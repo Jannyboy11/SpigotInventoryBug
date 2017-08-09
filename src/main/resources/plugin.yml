@@ -1,0 +1,10 @@
+name: InventoryTest
+author: Jannyboy11
+version: 1.0
+main: me.jan.invtest.InventoryTestPlugin
+
+commands:
+  testinv:
+    description: foo
+    usage: bar
+    permission: foo.bar
