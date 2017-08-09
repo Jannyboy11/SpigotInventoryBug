@@ -35,7 +35,7 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 		
 		InventoryHolder holder = event.getView().getTopInventory().getHolder();
 		if (holder == this) {
-			server.getLogger().info("(server == this) holds true"); 
+			server.getLogger().info("(holder == this) holds true"); 
 		}
 		//from this point server seems to deadlock upon shiftclicking an item into the dispenser inventory.
 		//cannot reproduce with a chest inventory.
@@ -47,7 +47,7 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 		
 		InventoryHolder holder = event.getView().getTopInventory().getHolder();
 		if (holder == this) {
-			server.getLogger().info("(server == this) holds true");
+			server.getLogger().info("(holder == this) holds true");
 			
 			HandlerList.unregisterAll(this);
 			server.getLogger().info("unregistered this listener");
