@@ -39,6 +39,7 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 		}
 		//from this point server seems to deadlock upon shiftclicking an item into the dispenser inventory.
 		//cannot reproduce with a chest inventory.
+		//note that the EventHandler for the InventoryClickEvent is not required to have this crash occur.
 	}
 	
 	@EventHandler
