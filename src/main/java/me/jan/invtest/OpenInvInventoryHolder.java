@@ -16,9 +16,9 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 	private final Server server;
 	private final Inventory inventory;
 	
-	public OpenInvInventoryHolder(Plugin plugin) {
+	public OpenInvInventoryHolder(Plugin plugin, InventoryType type) {
 		this.server = plugin.getServer();
-		this.inventory = server.createInventory(this, InventoryType.DISPENSER, "foo bar");
+		this.inventory = server.createInventory(this, type, "foo bar");
 		server.getPluginManager().registerEvents(this, plugin);
 	}
 
