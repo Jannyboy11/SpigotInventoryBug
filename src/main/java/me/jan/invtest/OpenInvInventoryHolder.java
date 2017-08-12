@@ -31,7 +31,10 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 	public void onInventoryClick(InventoryClickEvent event) {
 		server.getLogger().info("Click event!");
 		server.getLogger().info("click type = " + event.getClick());
-		server.getLogger().info("clicked inventory = " + event.getClickedInventory());
+		server.getLogger().info("slot type = " + event.getSlotType());
+		server.getLogger().info("action = " + event.getAction());
+		server.getLogger().info("slot = " + event.getSlot());
+		server.getLogger().info("raw slot = " + event.getRawSlot());
 		
 		InventoryHolder holder = event.getView().getTopInventory().getHolder();
 		if (holder == this) {
