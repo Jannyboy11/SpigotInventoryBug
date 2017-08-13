@@ -20,7 +20,7 @@ public class OpenInvCommandExecutor implements CommandExecutor {
 		
 
         Player player = (Player) sender;
-        InventoryType inventoryType;
+        InventoryType inventoryType = null;
 		
 		if (args.length == 0) {
 		    sender.sendMessage("Using default inventory type.., use /testinv <InventoryType> to open other types of inventories.");
