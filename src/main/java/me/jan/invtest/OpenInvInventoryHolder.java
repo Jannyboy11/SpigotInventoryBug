@@ -18,7 +18,7 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 	
 	public OpenInvInventoryHolder(Plugin plugin, InventoryType type) {
 		this.server = plugin.getServer();
-		this.inventory = server.createInventory(this, type, "foo bar");
+		this.inventory = type == null ? server.createInventory(this, 9, "foo bar") : server.createInventory(this, type, "foo bar");
 		server.getPluginManager().registerEvents(this, plugin);
 	}
 

@@ -18,21 +18,21 @@ public class OpenInvCommandExecutor implements CommandExecutor {
 			return true;
 		}
 		
+
+        Player player = (Player) sender;
+        InventoryType inventoryType;
+		
 		if (args.length == 0) {
-		    sender.sendMessage("Use an InventoryType as an argument pl0x!");
+		    sender.sendMessage("Using default inventory type.., use /testinv <InventoryType> to open other types of inventories.");
 		    return true;
+		} else {
+		    try {
+		        inventoryType = InventoryType.valueOf(args[0].toUpperCase());
+		    } catch (IllegalArgumentException e) {
+		        sender.sendMessage("InventoryTypes: " + Arrays.toString(InventoryType.values()));
+		        return true;
+		    }
 		}
-		
-		String firstArg = args[0];
-		InventoryType inventoryType;
-		try {
-		    inventoryType = InventoryType.valueOf(firstArg.toUpperCase());
-		} catch (IllegalArgumentException e) {
-		    sender.sendMessage("InventoryTypes: " + Arrays.toString(InventoryType.values()));
-		    return true;
-		}
-		
-		Player player = (Player) sender;
 		
 		PluginCommand pluginCommand = (PluginCommand) command;
 		OpenInvInventoryHolder holder = new OpenInvInventoryHolder(pluginCommand.getPlugin(), inventoryType);
@@ -40,6 +40,5 @@ public class OpenInvCommandExecutor implements CommandExecutor {
 		
 		return true;
 	}
-	
 
 }
