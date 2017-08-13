@@ -30,7 +30,6 @@ public class OpenInvCommandExecutor implements CommandExecutor {
 		        inventoryType = InventoryType.valueOf(args[0].toUpperCase());
 		    } catch (IllegalArgumentException e) {
 		        sender.sendMessage("InventoryTypes: " + Arrays.toString(InventoryType.values()));
-		        return true;
 		    }
 		}
 		
