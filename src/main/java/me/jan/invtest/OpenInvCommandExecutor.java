@@ -24,7 +24,6 @@ public class OpenInvCommandExecutor implements CommandExecutor {
 		
 		if (args.length == 0) {
 		    sender.sendMessage("Using default inventory type.., use /testinv <InventoryType> to open other types of inventories.");
-		    return true;
 		} else {
 		    try {
 		        inventoryType = InventoryType.valueOf(args[0].toUpperCase());
