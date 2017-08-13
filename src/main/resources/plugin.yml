@@ -1,6 +1,6 @@
 name: InventoryTest
 author: Jannyboy11
-version: 1.0
+version: 1.1
 main: me.jan.invtest.InventoryTestPlugin
 
 commands:
