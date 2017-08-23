@@ -1,6 +1,6 @@
 # This bug is now patched as of commit [79e55b6dcf6 ](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/commits/79e55b6dcf6448d33465b936ebdb2cc8a3cf2383#src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java), Please update to the latest version Spigot.
 
-~~# How to deadlock ur Spigot server in 6 simple steps:
+~~# How to deadlock ur Spigot server in 6 simple steps:~~
 
 ~~1. Install [this plugin](https://github.com/Jannyboy11/SpigotInventoryBug/releases)
 2. Log on to your server
