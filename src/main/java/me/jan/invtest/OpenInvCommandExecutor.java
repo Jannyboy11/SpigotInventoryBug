@@ -1,15 +1,18 @@
 package me.jan.invtest;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 
-public class OpenInvCommandExecutor implements CommandExecutor {
+public class OpenInvCommandExecutor implements TabExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -39,4 +42,8 @@ public class OpenInvCommandExecutor implements CommandExecutor {
 		return true;
 	}
 
+    @Override
+    public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
+        return Arrays.stream(InventoryType.values()).map(InventoryType::name).collect(Collectors.toList());
+    }
 }

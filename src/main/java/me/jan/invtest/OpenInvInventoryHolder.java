@@ -6,6 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -26,6 +27,15 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 	public Inventory getInventory() {
 		return inventory;
 	}
+
+	@EventHandler
+    public void onInventoryOpen(InventoryOpenEvent event) {
+	    Inventory topInventory = event.getView().getTopInventory();
+
+	    server.getLogger().info("Open event!");
+	    server.getLogger().info("topInventory == inventory = " + (topInventory == inventory));
+	    server.getLogger().info("topInventory.equals(inventory) = " + (topInventory.equals(inventory)));
+    }
 	
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent event) {
@@ -37,12 +47,7 @@ public class OpenInvInventoryHolder implements InventoryHolder, Listener {
 		server.getLogger().info("raw slot = " + event.getRawSlot());
 		
 		InventoryHolder holder = event.getView().getTopInventory().getHolder();
-		if (holder == this) {
-			server.getLogger().info("(holder == this) holds true"); 
-		}
-		//from this point server seems to deadlock upon shiftclicking an item into the dispenser inventory.
-		//cannot reproduce with a chest inventory.
-		//note that the EventHandler for the InventoryClickEvent is not required to have this crash occur.
+		server.getLogger().info("holder == this = " + (holder == this));
 	}
 	
 	@EventHandler
